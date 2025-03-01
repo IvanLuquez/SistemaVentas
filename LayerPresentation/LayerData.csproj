@@ -9,8 +9,15 @@
   <ItemGroup>
     <Folder Include="Company\" />
     <Folder Include="Employe\" />
-    <Folder Include="Inventory\" />
     <Folder Include="Sales\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LayerModel\LayerModel.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,4 +13,9 @@
     <Folder Include="Sales\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LayerModel\LayerModel.csproj" />
+    <ProjectReference Include="..\LayerPresentation\LayerData.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMainSales.cs">
+    <Compile Include="Inventory\CategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMainSales.Designer.cs">
-      <DependentUpon>FormMainSales.cs</DependentUpon>
+    <Compile Include="Inventory\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormMainSales.resx">
-      <DependentUpon>FormMainSales.cs</DependentUpon>
+    <EmbeddedResource Include="Inventory\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,8 +82,17 @@
   <ItemGroup>
     <Folder Include="Company\" />
     <Folder Include="Employe\" />
-    <Folder Include="Inventory\" />
     <Folder Include="Sales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LayerLogical\LayerLogical.csproj">
+      <Project>{47419ab1-0de6-4bb2-aa01-86e81f71b5ee}</Project>
+      <Name>LayerLogical</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LayerModel\LayerModel.csproj">
+      <Project>{90cc6ba0-6018-4232-8b77-a351b5d58708}</Project>
+      <Name>LayerModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
