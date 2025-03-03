@@ -1,13 +1,14 @@
 ﻿using LayerData.Inventory;
 using LayerModel.Inventory;
+using LayerModel.Responses;
 using Npgsql;
 using System.Data;
 
-namespace LayerAccessData.Inventory.Impl
+namespace LayerData.Inventory.Impl
 {
     public class AccessCategory : ICategory
     {
-        public DataTable getAllCategory()
+        public MessageResponse getAllCategory()
         {
             NpgsqlDataReader result;
             NpgsqlConnection conn = new NpgsqlConnection();
@@ -16,16 +17,17 @@ namespace LayerAccessData.Inventory.Impl
             try
             {
                 conn = AccesDB.getInstance().createConection();
-                NpgsqlCommand command = new NpgsqlCommand("SELECT idcategory, name_category, description, date_create, date_update FROM \"salesUpInventory\".category;", conn);
+                NpgsqlCommand command = new NpgsqlCommand("SELECT idcategory, name_category, description, date_create, date_update " +
+                    "FROM \"public\".category;", conn);
                 command.CommandType = CommandType.Text;
                 conn.Open();
                 result = command.ExecuteReader();
                 dataTable.Load(result);
-                return dataTable;
+                return ValidationErrors.SuccesMessage(dataTable, "Consulta exitosa de Categorias");
             }
             catch (NpgsqlException ex)
             {
-                throw;
+                return ValidationErrors.ValidationException(ex);
             }
             finally
             {
@@ -33,10 +35,10 @@ namespace LayerAccessData.Inventory.Impl
             }
         }
 
-        public string createCategory(Category category)
+        public MessageResponse createCategory(Category category)
         {
             string result;
-            string querySql = "INSERT INTO \"salesUpInventory\".category(name_category, description, date_create, date_update)" +
+            string querySql = "INSERT INTO \"public\".category(name_category, description, date_create, date_update)" +
                 " VALUES (@namecategory, @description, @datecreate, @dateupdate)";
 
             NpgsqlConnection conn = new NpgsqlConnection();
@@ -50,23 +52,22 @@ namespace LayerAccessData.Inventory.Impl
                 conn.Open();
                 var rowAffected = command.ExecuteNonQuery();
                 result = rowAffected >= 1 ? "Registro Exitoso." : "Error al registrar Categoria.";
+                return ValidationErrors.SuccesMessage(null, "Consulta exitosa de Categorias");
             }
-            catch (Exception ex)
+            catch (NpgsqlException ex)
             {
-                result = "Error: \n" + ex.Message;
+                return ValidationErrors.ValidationException(ex);
             }
             finally
             {
                 if (conn.State.Equals(ConnectionState.Open)) conn.Close();
             }
-
-            return result;
         }
 
-        public string updateCategory(Category category)
+        public MessageResponse updateCategory(Category category)
         {
             string result;
-            string querySql = "UPDATE \"salesUpInventory\".category cat SET " +
+            string querySql = "UPDATE \"public\".category cat SET " +
                 "name_category=@namecategory, description=@description, date_update=@dateupdate" +
                 " WHERE cat.idcategory = @idcategory";
 
@@ -81,23 +82,22 @@ namespace LayerAccessData.Inventory.Impl
                 conn.Open();
                 var rowAffected = command.ExecuteNonQuery();
                 result = rowAffected >= 1 ? "Actualizacion Exitoso." : "Error al actualizar Categoria.";
+                return ValidationErrors.SuccesMessage(null, "Actualizacion exitosa de Categorias");
             }
-            catch (Exception ex)
+            catch (NpgsqlException ex)
             {
-                result = "Error: \n" + ex.Message;
+                return ValidationErrors.ValidationException(ex);
             }
             finally
             {
                 if (conn.State.Equals(ConnectionState.Open)) conn.Close();
             }
-
-            return result;
         }
 
-        public string deleteCategory(int idCategory)
+        public MessageResponse deleteCategory(int idCategory)
         {
             string result;
-            string querySql = "DELETE FROM \"salesUpInventory\".category cat WHERE cat.idcategory = @idcategory";
+            string querySql = "DELETE FROM \"public\".category cat WHERE cat.idcategory = @idcategory";
 
             NpgsqlConnection conn = new NpgsqlConnection();
             conn = AccesDB.getInstance().createConection();
@@ -110,17 +110,16 @@ namespace LayerAccessData.Inventory.Impl
                 conn.Open();
                 var rowAffected = command.ExecuteNonQuery();
                 result = rowAffected >= 1 ? "Eliminacion Exitoso." : "Error al Eliminar Categoria.";
+                return ValidationErrors.SuccesMessage(null, "Eliminacion exitosa de Categorias");
             }
-            catch (Exception ex)
+            catch (NpgsqlException ex)
             {
-                result = "Error: \n" + ex.Message;
+                return ValidationErrors.ValidationException(ex);
             }
             finally
             {
                 if (conn.State.Equals(ConnectionState.Open)) conn.Close();
             }
-
-            return result;
         }
 
         private void addParameters(NpgsqlCommand command, Category category, bool isUpdate)

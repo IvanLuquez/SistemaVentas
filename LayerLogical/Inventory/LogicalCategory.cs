@@ -1,6 +1,6 @@
 ﻿using LayerData.Inventory.Impl;
 using LayerModel.Inventory;
-using LayerLogical.Utils;
+using LayerModel.Responses;
 using System.Data;
 using System.Text;
 
@@ -9,59 +9,24 @@ namespace LayerLogical.Inventory
     public class LogicalCategory
     {
         AccessCategory accessCategory = new AccessCategory();
-        UtilityValidateField validateFieldUtility = new UtilityValidateField();
-        StringBuilder resultValidation;
-        public DataTable getAllCategory()
+        public MessageResponse getAllCategory()
         {
-            try
-            {
-                return accessCategory.getAllCategory();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return accessCategory.getAllCategory();
         }
 
-        public string saveCategory(Category category)
+        public MessageResponse saveCategory(Category category)
         {
-            string result = validateField(category);
-
-            if (string.IsNullOrEmpty(result))
-            {
-                return accessCategory.createCategory(category);
-            } else
-            {
-                return result;
-            }
+            return accessCategory.createCategory(category);
         }
         
-        public string updateCategory(Category category)
+        public MessageResponse updateCategory(Category category)
         {
-            string result = validateField(category);
-
-            if (string.IsNullOrEmpty(result))
-            {
-                return accessCategory.updateCategory(category);
-            } else
-            {
-                return result;
-            }
+            return accessCategory.updateCategory(category);
         }
 
-        public string deleteCategory(int idCategory)
+        public MessageResponse deleteCategory(int idCategory)
         {
             return accessCategory.deleteCategory(idCategory);
         }
-
-        private string validateField(Category category)
-        {
-            resultValidation = new StringBuilder();
-            validateFieldUtility.fieldObligatory(category.nameCategory ,"Nombre", 100, resultValidation);
-            validateFieldUtility.fieldLength(category.descriptionCategory, "Descripcion", 100, resultValidation);
-
-            return resultValidation.ToString();
-        }
     }
-
 }

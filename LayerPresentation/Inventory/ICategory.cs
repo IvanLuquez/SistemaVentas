@@ -1,13 +1,14 @@
 ﻿using System.Data;
 using LayerModel.Inventory;
+using LayerModel.Responses;
 
 namespace LayerData.Inventory
 {
     public interface ICategory
     {
-        public DataTable getAllCategory();
-        public string createCategory(Category category);
-        public string updateCategory(Category category);
-        public string deleteCategory(int idCategory);
+        public MessageResponse getAllCategory();
+        public MessageResponse createCategory(Category category);
+        public MessageResponse updateCategory(Category category);
+        public MessageResponse deleteCategory(int idCategory);
     }
 }
