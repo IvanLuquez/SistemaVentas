@@ -43,5 +43,15 @@ namespace LayerViews
         {
             openChildForm(new SupplierForm());
         }
+
+        private void gestionarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ProductForm());
+        }
+
+        private void gestionarListaDePreciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ListPriceForm());
+        }
     }
 }

@@ -45,11 +45,6 @@
             txtNumberTwoSupplier = new TextBox();
             txtDescriptionSupplier = new TextBox();
             gridViewSupplier = new DataGridView();
-            btnAddSupplier = new Button();
-            btnUpdateSupplier = new Button();
-            btnCancel = new Button();
-            btnExitSupplier = new Button();
-            errorProviderSupplier = new ErrorProvider(components);
             idSupplier = new DataGridViewTextBoxColumn();
             nameSupplier = new DataGridViewTextBoxColumn();
             nameSocialSupplier = new DataGridViewTextBoxColumn();
@@ -58,6 +53,11 @@
             phoneTwoSupplier = new DataGridViewTextBoxColumn();
             descriptionSupplier = new DataGridViewTextBoxColumn();
             actionSupplier = new DataGridViewButtonColumn();
+            btnAddSupplier = new Button();
+            btnUpdateSupplier = new Button();
+            btnCancel = new Button();
+            btnExitSupplier = new Button();
+            errorProviderSupplier = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridViewSupplier).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderSupplier).BeginInit();
@@ -288,66 +288,6 @@
             gridViewSupplier.TabIndex = 13;
             gridViewSupplier.CellClick += gridViewSupplier_CellClick;
             // 
-            // btnAddSupplier
-            // 
-            btnAddSupplier.BackColor = Color.Lime;
-            tableLayoutPanel1.SetColumnSpan(btnAddSupplier, 2);
-            btnAddSupplier.FlatStyle = FlatStyle.Flat;
-            btnAddSupplier.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnAddSupplier.Location = new Point(347, 255);
-            btnAddSupplier.Name = "btnAddSupplier";
-            btnAddSupplier.Size = new Size(148, 30);
-            btnAddSupplier.TabIndex = 14;
-            btnAddSupplier.Text = "AGREGAR";
-            btnAddSupplier.UseVisualStyleBackColor = false;
-            btnAddSupplier.Click += btnAddSupplier_Click;
-            // 
-            // btnUpdateSupplier
-            // 
-            btnUpdateSupplier.BackColor = Color.FromArgb(255, 192, 128);
-            tableLayoutPanel1.SetColumnSpan(btnUpdateSupplier, 2);
-            btnUpdateSupplier.FlatStyle = FlatStyle.Flat;
-            btnUpdateSupplier.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnUpdateSupplier.Location = new Point(519, 255);
-            btnUpdateSupplier.Name = "btnUpdateSupplier";
-            btnUpdateSupplier.Size = new Size(148, 30);
-            btnUpdateSupplier.TabIndex = 15;
-            btnUpdateSupplier.Text = "ACTUALIZAR";
-            btnUpdateSupplier.UseVisualStyleBackColor = false;
-            btnUpdateSupplier.Click += btnUpdateSupplier_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.BackColor = Color.FromArgb(255, 192, 192);
-            tableLayoutPanel1.SetColumnSpan(btnCancel, 2);
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnCancel.Location = new Point(691, 255);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(148, 30);
-            btnCancel.TabIndex = 16;
-            btnCancel.Text = "CANCELAR";
-            btnCancel.UseVisualStyleBackColor = false;
-            btnCancel.Click += btnCancel_Click;
-            // 
-            // btnExitSupplier
-            // 
-            btnExitSupplier.BackColor = Color.Red;
-            tableLayoutPanel1.SetColumnSpan(btnExitSupplier, 2);
-            btnExitSupplier.FlatStyle = FlatStyle.Flat;
-            btnExitSupplier.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnExitSupplier.Location = new Point(691, 291);
-            btnExitSupplier.Name = "btnExitSupplier";
-            btnExitSupplier.Size = new Size(148, 30);
-            btnExitSupplier.TabIndex = 17;
-            btnExitSupplier.Text = "CERRAR";
-            btnExitSupplier.UseVisualStyleBackColor = false;
-            btnExitSupplier.Click += btnExitSupplier_Click;
-            // 
-            // errorProviderSupplier
-            // 
-            errorProviderSupplier.ContainerControl = this;
-            // 
             // idSupplier
             // 
             idSupplier.HeaderText = "id";
@@ -409,6 +349,66 @@
             actionSupplier.Text = "Borrar";
             actionSupplier.UseColumnTextForButtonValue = true;
             actionSupplier.Width = 87;
+            // 
+            // btnAddSupplier
+            // 
+            btnAddSupplier.BackColor = Color.Lime;
+            tableLayoutPanel1.SetColumnSpan(btnAddSupplier, 2);
+            btnAddSupplier.FlatStyle = FlatStyle.Flat;
+            btnAddSupplier.Font = new Font("Arial", 11.25F, FontStyle.Bold);
+            btnAddSupplier.Location = new Point(347, 255);
+            btnAddSupplier.Name = "btnAddSupplier";
+            btnAddSupplier.Size = new Size(148, 30);
+            btnAddSupplier.TabIndex = 14;
+            btnAddSupplier.Text = "AGREGAR";
+            btnAddSupplier.UseVisualStyleBackColor = false;
+            btnAddSupplier.Click += btnAddSupplier_Click;
+            // 
+            // btnUpdateSupplier
+            // 
+            btnUpdateSupplier.BackColor = Color.FromArgb(255, 192, 128);
+            tableLayoutPanel1.SetColumnSpan(btnUpdateSupplier, 2);
+            btnUpdateSupplier.FlatStyle = FlatStyle.Flat;
+            btnUpdateSupplier.Font = new Font("Arial", 11.25F, FontStyle.Bold);
+            btnUpdateSupplier.Location = new Point(519, 255);
+            btnUpdateSupplier.Name = "btnUpdateSupplier";
+            btnUpdateSupplier.Size = new Size(148, 30);
+            btnUpdateSupplier.TabIndex = 15;
+            btnUpdateSupplier.Text = "ACTUALIZAR";
+            btnUpdateSupplier.UseVisualStyleBackColor = false;
+            btnUpdateSupplier.Click += btnUpdateSupplier_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(255, 192, 192);
+            tableLayoutPanel1.SetColumnSpan(btnCancel, 2);
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Arial", 11.25F, FontStyle.Bold);
+            btnCancel.Location = new Point(691, 255);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(148, 30);
+            btnCancel.TabIndex = 16;
+            btnCancel.Text = "CANCELAR";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // btnExitSupplier
+            // 
+            btnExitSupplier.BackColor = Color.Red;
+            tableLayoutPanel1.SetColumnSpan(btnExitSupplier, 2);
+            btnExitSupplier.FlatStyle = FlatStyle.Flat;
+            btnExitSupplier.Font = new Font("Arial", 11.25F, FontStyle.Bold);
+            btnExitSupplier.Location = new Point(691, 291);
+            btnExitSupplier.Name = "btnExitSupplier";
+            btnExitSupplier.Size = new Size(148, 30);
+            btnExitSupplier.TabIndex = 17;
+            btnExitSupplier.Text = "CERRAR";
+            btnExitSupplier.UseVisualStyleBackColor = false;
+            btnExitSupplier.Click += btnExitSupplier_Click;
+            // 
+            // errorProviderSupplier
+            // 
+            errorProviderSupplier.ContainerControl = this;
             // 
             // SupplierForm
             // 

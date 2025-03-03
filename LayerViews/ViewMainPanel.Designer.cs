@@ -32,6 +32,8 @@
             iNVENTARIOToolStripMenuItem = new ToolStripMenuItem();
             gestionarCategoriaToolStripMenuItem = new ToolStripMenuItem();
             gestionarProveedorToolStripMenuItem = new ToolStripMenuItem();
+            gestionarProductosToolStripMenuItem = new ToolStripMenuItem();
+            gestionarListaDePreciosToolStripMenuItem = new ToolStripMenuItem();
             panelChild = new Panel();
             menuOptions.SuspendLayout();
             SuspendLayout();
@@ -43,38 +45,52 @@
             menuOptions.LayoutStyle = ToolStripLayoutStyle.VerticalStackWithOverflow;
             menuOptions.Location = new Point(0, 0);
             menuOptions.Name = "menuOptions";
-            menuOptions.Size = new Size(126, 450);
+            menuOptions.Size = new Size(91, 450);
             menuOptions.TabIndex = 0;
             menuOptions.Text = "menuOption";
             // 
             // iNVENTARIOToolStripMenuItem
             // 
-            iNVENTARIOToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionarCategoriaToolStripMenuItem, gestionarProveedorToolStripMenuItem });
+            iNVENTARIOToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gestionarCategoriaToolStripMenuItem, gestionarProveedorToolStripMenuItem, gestionarProductosToolStripMenuItem, gestionarListaDePreciosToolStripMenuItem });
             iNVENTARIOToolStripMenuItem.Name = "iNVENTARIOToolStripMenuItem";
-            iNVENTARIOToolStripMenuItem.Size = new Size(113, 19);
+            iNVENTARIOToolStripMenuItem.Size = new Size(78, 19);
             iNVENTARIOToolStripMenuItem.Text = "INVENTARIO";
             // 
             // gestionarCategoriaToolStripMenuItem
             // 
             gestionarCategoriaToolStripMenuItem.Name = "gestionarCategoriaToolStripMenuItem";
-            gestionarCategoriaToolStripMenuItem.Size = new Size(181, 22);
+            gestionarCategoriaToolStripMenuItem.Size = new Size(208, 22);
             gestionarCategoriaToolStripMenuItem.Text = "Gestionar Categoria";
             gestionarCategoriaToolStripMenuItem.Click += gestionarCategoriaToolStripMenuItem_Click;
             // 
             // gestionarProveedorToolStripMenuItem
             // 
             gestionarProveedorToolStripMenuItem.Name = "gestionarProveedorToolStripMenuItem";
-            gestionarProveedorToolStripMenuItem.Size = new Size(181, 22);
+            gestionarProveedorToolStripMenuItem.Size = new Size(208, 22);
             gestionarProveedorToolStripMenuItem.Text = "Gestionar Proveedor";
             gestionarProveedorToolStripMenuItem.Click += gestionarProveedorToolStripMenuItem_Click;
+            // 
+            // gestionarProductosToolStripMenuItem
+            // 
+            gestionarProductosToolStripMenuItem.Name = "gestionarProductosToolStripMenuItem";
+            gestionarProductosToolStripMenuItem.Size = new Size(208, 22);
+            gestionarProductosToolStripMenuItem.Text = "Gestionar Productos";
+            gestionarProductosToolStripMenuItem.Click += gestionarProductosToolStripMenuItem_Click;
+            // 
+            // gestionarListaDePreciosToolStripMenuItem
+            // 
+            gestionarListaDePreciosToolStripMenuItem.Name = "gestionarListaDePreciosToolStripMenuItem";
+            gestionarListaDePreciosToolStripMenuItem.Size = new Size(208, 22);
+            gestionarListaDePreciosToolStripMenuItem.Text = "Gestionar Lista de Precios";
+            gestionarListaDePreciosToolStripMenuItem.Click += gestionarListaDePreciosToolStripMenuItem_Click;
             // 
             // panelChild
             // 
             panelChild.BackColor = Color.MediumAquamarine;
             panelChild.Dock = DockStyle.Fill;
-            panelChild.Location = new Point(126, 0);
+            panelChild.Location = new Point(91, 0);
             panelChild.Name = "panelChild";
-            panelChild.Size = new Size(674, 450);
+            panelChild.Size = new Size(709, 450);
             panelChild.TabIndex = 1;
             // 
             // ViewMainPanel
@@ -107,5 +123,7 @@
         private ToolStripMenuItem gestionarCategoriaToolStripMenuItem;
         private Panel panelChild;
         private ToolStripMenuItem gestionarProveedorToolStripMenuItem;
+        private ToolStripMenuItem gestionarProductosToolStripMenuItem;
+        private ToolStripMenuItem gestionarListaDePreciosToolStripMenuItem;
     }
 }

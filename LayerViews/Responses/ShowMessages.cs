@@ -4,14 +4,14 @@ namespace LayerViews.Responses
 {
     public class ShowMessages
     {
-        private string messageConcat = "";
+        private string messageConcat = string.Empty;
 
         public void ShowMessage(MessageResponse messageResponse)
         {
+            messageConcat = string.Empty;
             if (messageResponse.Success)
             {
-                messageConcat = messageConcat + messageResponse.Message + "\n";
-                MessageBox.Show(messageConcat, "Opreacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(messageResponse.Message, "Opreacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
