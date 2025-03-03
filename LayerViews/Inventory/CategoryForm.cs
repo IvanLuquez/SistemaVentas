@@ -109,6 +109,7 @@ namespace SistemaVentas.Inventory
             lblDataFinishCategory.Text = "-- / -- / --";
             lblDataInitCategory.Text = "-- / -- / --";
             txtNameCategory.Focus();
+            idCategoryRegister = 0;
         }
 
         private void CategoryForm_Load(object sender, EventArgs e)
@@ -129,6 +130,7 @@ namespace SistemaVentas.Inventory
                 {
                     sendMessage.ShowMessage(logicalCategory.deleteCategory(idCategoryRegister));
                     getCategoryInformation();
+                    cleanFormCategory();
                 }
             }
             else

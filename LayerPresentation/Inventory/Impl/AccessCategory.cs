@@ -51,8 +51,8 @@ namespace LayerData.Inventory.Impl
                 addParameters(command, category, false);
                 conn.Open();
                 var rowAffected = command.ExecuteNonQuery();
-                result = rowAffected >= 1 ? "Registro Exitoso." : "Error al registrar Categoria.";
-                return ValidationErrors.SuccesMessage(null, "Consulta exitosa de Categorias");
+                result = rowAffected >= 1 ? "Registro Exitoso de la categoria." : "Error al registrar Categoria.";
+                return ValidationErrors.SuccesMessage(null, result);
             }
             catch (NpgsqlException ex)
             {
@@ -81,8 +81,8 @@ namespace LayerData.Inventory.Impl
                 addParameters(command, category, true);
                 conn.Open();
                 var rowAffected = command.ExecuteNonQuery();
-                result = rowAffected >= 1 ? "Actualizacion Exitoso." : "Error al actualizar Categoria.";
-                return ValidationErrors.SuccesMessage(null, "Actualizacion exitosa de Categorias");
+                result = rowAffected >= 1 ? "Actualizacion Exitosa de la categoria." : "Error al actualizar Categoria.";
+                return ValidationErrors.SuccesMessage(null, result);
             }
             catch (NpgsqlException ex)
             {
@@ -109,8 +109,8 @@ namespace LayerData.Inventory.Impl
                 command.Parameters.AddWithValue("@idcategory", idCategory);
                 conn.Open();
                 var rowAffected = command.ExecuteNonQuery();
-                result = rowAffected >= 1 ? "Eliminacion Exitoso." : "Error al Eliminar Categoria.";
-                return ValidationErrors.SuccesMessage(null, "Eliminacion exitosa de Categorias");
+                result = rowAffected >= 1 ? "Eliminacion Exitosa de la categoria." : "Error al Eliminar Categoria.";
+                return ValidationErrors.SuccesMessage(null, result);
             }
             catch (NpgsqlException ex)
             {

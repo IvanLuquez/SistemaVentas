@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Company\" />
     <Folder Include="Employe\" />
-    <Folder Include="Inventory\" />
     <Folder Include="Sales\" />
   </ItemGroup>
 

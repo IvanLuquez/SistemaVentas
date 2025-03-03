@@ -1,3 +1,4 @@
+using LayerViews.Inventory;
 using SistemaVentas.Inventory;
 
 namespace LayerViews
@@ -36,6 +37,11 @@ namespace LayerViews
         private void gestionarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new CategoryForm());
+        }
+
+        private void gestionarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SupplierForm());
         }
     }
 }

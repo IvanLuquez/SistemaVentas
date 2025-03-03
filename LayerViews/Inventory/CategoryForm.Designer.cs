@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tableLayoutPanel1 = new TableLayoutPanel();
-            panelCategory = new Panel();
-            lblTitleCategory = new Label();
             lblNombre = new Label();
             lblDescriptionCategory = new Label();
             lblDateInitCategory = new Label();
@@ -52,10 +50,10 @@
             dateCreateCategory = new DataGridViewTextBoxColumn();
             dateUpdateCategory = new DataGridViewTextBoxColumn();
             actionCategory = new DataGridViewButtonColumn();
-            errorProviderCategory = new ErrorProvider(components);
             btnClose = new Button();
+            errorProviderCategory = new ErrorProvider(components);
+            lblTitleCategory = new Label();
             tableLayoutPanel1.SuspendLayout();
-            panelCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridViewCategory).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderCategory).BeginInit();
             SuspendLayout();
@@ -74,7 +72,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.090909F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.090909F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.090909F));
-            tableLayoutPanel1.Controls.Add(panelCategory, 0, 0);
             tableLayoutPanel1.Controls.Add(lblNombre, 0, 1);
             tableLayoutPanel1.Controls.Add(lblDescriptionCategory, 0, 3);
             tableLayoutPanel1.Controls.Add(lblDateInitCategory, 0, 5);
@@ -88,6 +85,7 @@
             tableLayoutPanel1.Controls.Add(lblDataFinishCategory, 3, 6);
             tableLayoutPanel1.Controls.Add(gridViewCategory, 5, 1);
             tableLayoutPanel1.Controls.Add(btnClose, 6, 8);
+            tableLayoutPanel1.Controls.Add(lblTitleCategory, 0, 0);
             tableLayoutPanel1.Location = new Point(13, 12);
             tableLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -104,28 +102,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1083, 352);
             tableLayoutPanel1.TabIndex = 0;
-            // 
-            // panelCategory
-            // 
-            panelCategory.BackColor = Color.DodgerBlue;
-            tableLayoutPanel1.SetColumnSpan(panelCategory, 11);
-            panelCategory.Controls.Add(lblTitleCategory);
-            panelCategory.Location = new Point(4, 3);
-            panelCategory.Margin = new Padding(4, 3, 4, 3);
-            panelCategory.Name = "panelCategory";
-            panelCategory.Size = new Size(1075, 33);
-            panelCategory.TabIndex = 0;
-            // 
-            // lblTitleCategory
-            // 
-            lblTitleCategory.Anchor = AnchorStyles.None;
-            lblTitleCategory.AutoSize = true;
-            lblTitleCategory.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitleCategory.Location = new Point(378, 3);
-            lblTitleCategory.Name = "lblTitleCategory";
-            lblTitleCategory.Size = new Size(325, 29);
-            lblTitleCategory.TabIndex = 0;
-            lblTitleCategory.Text = "GESTION DE CATEGORIAS";
             // 
             // lblNombre
             // 
@@ -283,25 +259,25 @@
             gridViewCategory.AllowUserToAddRows = false;
             gridViewCategory.AllowUserToDeleteRows = false;
             gridViewCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            gridViewCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            gridViewCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             gridViewCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridViewCategory.Columns.AddRange(new DataGridViewColumn[] { idCategory, nameCategory, descriptionCategory, dateCreateCategory, dateUpdateCategory, actionCategory });
             tableLayoutPanel1.SetColumnSpan(gridViewCategory, 6);
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            gridViewCategory.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            gridViewCategory.DefaultCellStyle = dataGridViewCellStyle4;
             gridViewCategory.Location = new Point(494, 42);
             gridViewCategory.Margin = new Padding(4, 3, 4, 3);
             gridViewCategory.Name = "gridViewCategory";
@@ -351,10 +327,6 @@
             actionCategory.Text = "Borrar";
             actionCategory.UseColumnTextForButtonValue = true;
             // 
-            // errorProviderCategory
-            // 
-            errorProviderCategory.ContainerControl = this;
-            // 
             // btnClose
             // 
             btnClose.BackColor = Color.FromArgb(255, 192, 128);
@@ -368,6 +340,23 @@
             btnClose.Text = "CERRAR";
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
+            // 
+            // errorProviderCategory
+            // 
+            errorProviderCategory.ContainerControl = this;
+            // 
+            // lblTitleCategory
+            // 
+            lblTitleCategory.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(lblTitleCategory, 11);
+            lblTitleCategory.Dock = DockStyle.Bottom;
+            lblTitleCategory.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitleCategory.Location = new Point(3, 10);
+            lblTitleCategory.Name = "lblTitleCategory";
+            lblTitleCategory.Size = new Size(1077, 29);
+            lblTitleCategory.TabIndex = 0;
+            lblTitleCategory.Text = "GESTION DE CATEGORIAS";
+            lblTitleCategory.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CategoryForm
             // 
@@ -386,8 +375,6 @@
             Load += CategoryForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            panelCategory.ResumeLayout(false);
-            panelCategory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridViewCategory).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderCategory).EndInit();
             ResumeLayout(false);
@@ -397,7 +384,6 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panelCategory;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDescriptionCategory;
         private System.Windows.Forms.Label lblDateInitCategory;
@@ -410,7 +396,6 @@
         private System.Windows.Forms.TextBox txtNameCategory;
         private System.Windows.Forms.TextBox txtDescriptionCategory;
         private System.Windows.Forms.DataGridView gridViewCategory;
-        private Label lblTitleCategory;
         private ErrorProvider errorProviderCategory;
         private DataGridViewTextBoxColumn idCategory;
         private DataGridViewTextBoxColumn nameCategory;
@@ -419,5 +404,6 @@
         private DataGridViewTextBoxColumn dateUpdateCategory;
         private DataGridViewButtonColumn actionCategory;
         private Button btnClose;
+        private Label lblTitleCategory;
     }
 }
